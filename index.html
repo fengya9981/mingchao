@@ -16,6 +16,11 @@
                   --header-color: #1a1a1a;
                   --border-color: #eaecef;
                   --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+                  --sidebar-width: 280px;
+            }
+
+            * {
+                  box-sizing: border-box;
             }
 
             body {
@@ -28,10 +33,112 @@
                   -webkit-font-smoothing: antialiased;
             }
 
+            /* Sidebar Styles */
+            .sidebar {
+                  position: fixed;
+                  top: 0;
+                  left: 0;
+                  width: var(--sidebar-width);
+                  height: 100vh;
+                  background: linear-gradient(180deg, #2c3e50 0%, #1a252f 100%);
+                  color: #ecf0f1;
+                  padding: 30px 20px;
+                  overflow-y: auto;
+                  z-index: 1000;
+                  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+            }
+
+            .sidebar-header {
+                  text-align: center;
+                  padding-bottom: 25px;
+                  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                  margin-bottom: 25px;
+            }
+
+            .sidebar-header h2 {
+                  font-family: 'Noto Serif SC', serif;
+                  font-size: 1.3em;
+                  margin: 0 0 10px 0;
+                  color: #fff;
+                  border: none;
+                  padding: 0;
+            }
+
+            .sidebar-header .badge {
+                  display: inline-block;
+                  background: #3498db;
+                  color: white;
+                  padding: 3px 10px;
+                  border-radius: 12px;
+                  font-size: 0.75em;
+                  font-weight: 500;
+            }
+
+            .toc-title {
+                  font-size: 0.85em;
+                  text-transform: uppercase;
+                  letter-spacing: 1.5px;
+                  color: #95a5a6;
+                  margin-bottom: 15px;
+                  font-weight: 500;
+            }
+
+            .toc-list {
+                  list-style: none;
+                  padding: 0;
+                  margin: 0;
+            }
+
+            .toc-list li {
+                  margin-bottom: 8px;
+            }
+
+            .toc-list a {
+                  display: block;
+                  padding: 10px 15px;
+                  color: #bdc3c7;
+                  text-decoration: none;
+                  font-size: 0.9em;
+                  border-radius: 8px;
+                  transition: all 0.2s ease;
+                  border-left: 3px solid transparent;
+            }
+
+            .toc-list a:hover {
+                  background: rgba(255, 255, 255, 0.08);
+                  color: #fff;
+                  border-left-color: #3498db;
+            }
+
+            .toc-list a.active {
+                  background: rgba(52, 152, 219, 0.2);
+                  color: #3498db;
+                  border-left-color: #3498db;
+            }
+
+            .toc-list .chapter-num {
+                  display: inline-block;
+                  width: 24px;
+                  height: 24px;
+                  background: rgba(255, 255, 255, 0.1);
+                  border-radius: 50%;
+                  text-align: center;
+                  line-height: 24px;
+                  font-size: 0.75em;
+                  margin-right: 10px;
+                  font-weight: 600;
+            }
+
+            /* Main Content Styles */
+            .main-content {
+                  margin-left: var(--sidebar-width);
+                  padding: 60px 80px;
+                  max-width: calc(100% - var(--sidebar-width));
+            }
+
             .container {
                   max-width: 900px;
-                  margin: 60px auto;
-                  padding: 0 40px;
+                  margin: 0 auto;
             }
 
             header {
@@ -155,76 +262,115 @@
                   display: block;
                   margin-top: 20px;
             }
+
+            /* Responsive */
+            @media (max-width: 1024px) {
+                  .sidebar {
+                        width: 240px;
+                  }
+
+                  .main-content {
+                        margin-left: 240px;
+                        padding: 40px 40px;
+                  }
+            }
+
+            @media (max-width: 768px) {
+                  .sidebar {
+                        position: relative;
+                        width: 100%;
+                        height: auto;
+                        padding: 20px;
+                  }
+
+                  .main-content {
+                        margin-left: 0;
+                        padding: 30px 20px;
+                        max-width: 100%;
+                  }
+            }
       </style>
 </head>
 
 <body>
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+            <div class="sidebar-header">
+                  <span class="badge">V3.1</span>
+                  <h2>踏雪重溯<br>存有之光</h2>
+            </div>
 
-      <div class="container">
-            <header>
-                  <span class="version-badge">Version 3.1 Artifact</span>
-                  <h1>踏雪重溯，存有之光</h1>
-                  <p style="font-size: 1.2em; color: #7f8c8d;">《鸣潮》3.1版本深度哲学与世界观综合解析报告</p>
-            </header>
+            <div class="toc-title">📖 章节导航</div>
+            <ul class="toc-list">
+                  <li><a href="chapters/ch01_world_reconstruction.html"><span class="chapter-num">1</span>冰原上的世界重构</a>
+                  </li>
+                  <li><a href="chapters/ch02_timeline_emotions.html"><span class="chapter-num">2</span>命运的时间线与情感轨迹</a>
+                  </li>
+                  <li><a href="chapters/ch03_tethys_structure.html"><span class="chapter-num">3</span>泰缇丝体系与存有的分层</a>
+                  </li>
+                  <li><a href="chapters/ch04_mobius_paradox.html"><span class="chapter-num">4</span>莫比乌斯循环与原型体悖论</a>
+                  </li>
+                  <li><a href="chapters/ch05_gnostic_phenomenology.html"><span
+                                    class="chapter-num">5</span>诺斯替的映射与现象学之光</a></li>
+                  <li><a href="chapters/ch06_psychological_resonance.html"><span
+                                    class="chapter-num">6</span>心理共鸣与刀点工程学</a></li>
+                  <li><a href="chapters/ch07_narrative_transition.html"><span class="chapter-num">7</span>叙事范式的转型</a>
+                  </li>
+                  <li><a href="chapters/ch08_future_evolution.html"><span class="chapter-num">8</span>未来演进与存有展望</a></li>
+                  <li><a href="chapters/ch09_final_summary.html"><span class="chapter-num">終</span>存有诗学的结语</a></li>
+            </ul>
+      </aside>
 
-            <!-- Table of Contents -->
-            <section style="background: #f8f9fa; border: none;">
-                  <h2 style="border-left-color: #3498db;">📖 详阅目录 (Chapter Deep-Dives)</h2>
-                  <p>每个章节均提供10倍扩展版本，点击链接进入详细解析：</p>
-                  <ol>
-                        <li><a href="chapters/ch01_world_reconstruction.html">第一章：冰原上的世界重构</a> — 版本技术日志与生态参数</li>
-                        <li><a href="chapters/ch02_timeline_emotions.html">第二章：命运的时间线与情感轨迹</a> — 七阶段情感工程详解</li>
-                        <li><a href="chapters/ch03_tethys_structure.html">第三章：泰缇丝体系与存有的分层</a> — 系统架构与信息存在论</li>
-                        <li><a href="chapters/ch04_mobius_paradox.html">第四章：莫比乌斯循环与原型体悖论</a> — 因果逻辑与自由意志</li>
-                        <li><a href="chapters/ch05_gnostic_phenomenology.html">第五章：诺斯替的映射与现象学之光</a> — 哲学神话的当代转译</li>
-                        <li><a href="chapters/ch06_psychological_resonance.html">第六章：心理共鸣的机制与刀点工程学</a> — 情感触发的科学分析</li>
-                        <li><a href="chapters/ch07_narrative_transition.html">第七章：叙事范式的转型</a> — 从"生存"到"生命"的飞跃</li>
-                        <li><a href="chapters/ch08_future_evolution.html">第八章：未来演进与存有展望</a> — 伏笔推演与剧情预测</li>
-                        <li><a href="chapters/ch09_final_summary.html">终章：存有诗学的结语</a> — 核心结论与致读者</li>
-                  </ol>
-            </section>
+      <!-- Main Content Area -->
+      <main class="main-content">
+            <div class="container">
+                  <header>
+                        <span class="version-badge">Version 3.1 Artifact</span>
+                        <h1>踏雪重溯，存有之光</h1>
+                        <p style="font-size: 1.2em; color: #7f8c8d;">《鸣潮》3.1版本深度哲学与世界观综合解析报告</p>
+                  </header>
 
-            <!-- 第一篇：降临与重启 -->
-            <div class="part-header">PART I: ADVENT & RESTART</div>
-            <section>
-                  <h2>第一章：冰原上的世界重构</h2>
-                  <p>2026年2月5日，版本“踏雪而行（For You Who Walk in
-                        Snow）”正式上线。这不仅是地理上的扩张（罗伊冰原），更是《鸣潮》叙事内核的升维。更新标志着从“灾后文明重建”向“世界规律溯源”的实质性转折。</p>
-                  <ul>
-                        <li><b>技术载体：</b>全新的雪原区域“罗伊冰原（Roya Frostlands）”，极寒磁暴与冻结遗迹构成了时间的物理景观。</li>
-                        <li><b>关键变量：</b>5★共鸣者<b>艾梅斯（Aemeath）</b>的引入，她不仅是角色，更是打开泰缇丝系统底层逻辑的钥匙。</li>
-                        <li><b>系统协同：</b>画面性能的大幅优化与跨水面摩托的加入，提升了玩家在极端环境下的沉浸式探索体验。</li>
-                  </ul>
-                  <p style="text-align: right;"><a href="chapters/ch01_world_reconstruction.html"
-                              style="color: #3498db;">阅读详细版本</a></p>
-            </section>
+                  <!-- 第一篇：降临与重启 -->
+                  <div class="part-header">PART I: ADVENT & RESTART</div>
+                  <section id="ch1">
+                        <h2>第一章：冰原上的世界重构</h2>
+                        <p>2026年2月5日，版本"踏雪而行（For You Who Walk in
+                              Snow）"正式上线。这不仅是地理上的扩张（罗伊冰原），更是《鸣潮》叙事内核的升维。更新标志着从"灾后文明重建"向"世界规律溯源"的实质性转折。</p>
+                        <ul>
+                              <li><b>技术载体：</b>全新的雪原区域"罗伊冰原（Roya Frostlands）"，极寒磁暴与冻结遗迹构成了时间的物理景观。</li>
+                              <li><b>关键变量：</b>5★共鸣者<b>艾梅斯（Aemeath）</b>的引入，她不仅是角色，更是打开泰缇丝系统底层逻辑的钥匙。</li>
+                              <li><b>系统协同：</b>画面性能的大幅优化与跨水面摩托的加入，提升了玩家在极端环境下的沉浸式探索体验。</li>
+                        </ul>
+                        <p style="text-align: right;"><a href="chapters/ch01_world_reconstruction.html"
+                                    style="color: #3498db;">阅读详细版本 →</a></p>
+                  </section>
 
-            <section>
-                  <h2>第二章：命运的时间线与情感轨迹</h2>
-                  <p>剧情通过细腻的七个阶段，构建了一个如同“养育与离别”般深沉的情感弧光：</p>
-                  <ol>
-                        <li><b>相遇：</b>在雪原救起如初生般的爱弥斯，建立“守护者”契约。</li>
-                        <li><b>陪伴：</b>见证她在荒野中学习情感与痛苦，产生如同亲子般的纯粹依附。</li>
-                        <li><b>真相：</b>揭开其不稳定的“电子幽灵”本质，引出“记得我”的存在性焦虑。</li>
-                        <li><b>觉醒：</b>她从躲在身后到主动战斗，标志着主体性的破茧而出。</li>
-                        <li><b>重压：</b>面对崩坏，意识到放手是让她真正“存在”的唯一路径。</li>
-                        <li><b>离别：</b>在莫比乌斯环的终点，她以独立个体的身份告别。</li>
-                        <li><b>回响：</b>无需承诺的旅行，记忆成为永恒的锚点。</li>
-                  </ol>
-                  <div class="quote-box">
-                        “这不是爱情，而是亲手陪她长大，然后学会放手。”
-                  </div>
-                  <p style="text-align: right;"><a href="chapters/ch02_timeline_emotions.html"
-                              style="color: #3498db;">阅读详细版本</a></p>
-            </section>
+                  <section id="ch2">
+                        <h2>第二章：命运的时间线与情感轨迹</h2>
+                        <p>剧情通过细腻的七个阶段，构建了一个如同"养育与离别"般深沉的情感弧光：</p>
+                        <ol>
+                              <li><b>相遇：</b>在雪原救起如初生般的爱弥斯，建立"守护者"契约。</li>
+                              <li><b>陪伴：</b>见证她在荒野中学习情感与痛苦，产生如同亲子般的纯粹依附。</li>
+                              <li><b>真相：</b>揭开其不稳定的"电子幽灵"本质，引出"记得我"的存在性焦虑。</li>
+                              <li><b>觉醒：</b>她从躲在身后到主动战斗，标志着主体性的破茧而出。</li>
+                              <li><b>重压：</b>面对崩坏，意识到放手是让她真正"存在"的唯一路径。</li>
+                              <li><b>离别：</b>在莫比乌斯环的终点，她以独立个体的身份告别。</li>
+                              <li><b>回响：</b>无需承诺的旅行，记忆成为永恒的锚点。</li>
+                        </ol>
+                        <div class="quote-box">
+                              "这不是爱情，而是亲手陪她长大，然后学会放手。"
+                        </div>
+                        <p style="text-align: right;"><a href="chapters/ch02_timeline_emotions.html"
+                                    style="color: #3498db;">阅读详细版本 →</a></p>
+                  </section>
 
-            <!-- 第二篇：世界的骨骼与数字化的灵魂 -->
-            <hr>
-            <div class="part-header">PART II: STRUCTURE & DIGITAL SOUL</div>
-            <section>
-                  <h2>第三章：泰缇丝体系与存有的分层</h2>
-                  <p>3.1版本通过“罗伊冰原”揭示了支撑世界的非线性骨架。现实已不再是物质，而是被“编译器”过滤后的信息：</p>
-                  <pre>
+                  <!-- 第二篇：世界的骨骼与数字化的灵魂 -->
+                  <hr>
+                  <div class="part-header">PART II: STRUCTURE & DIGITAL SOUL</div>
+                  <section id="ch3">
+                        <h2>第三章：泰缇丝体系与存有的分层</h2>
+                        <p>3.1版本通过"罗伊冰原"揭示了支撑世界的非线性骨架。现实已不再是物质，而是被"编译器"过滤后的信息：</p>
+                        <pre>
 源层 / 悲鸣噪声（混沌信息）
       ↓
 泰缇丝系统（世界记忆库/处理核心）
@@ -232,96 +378,97 @@
 哨兵执行层（物理规则转化器）
       ↓
 现实层 / 罗伊冰原（信息淤积区）
-        </pre>
-                  <ul>
-                        <li><b>信息存在论：</b>存在物本质上是“信息模式”。爱弥斯通过稳定内在模式实现从幽灵向主体的跨越。</li>
-                        <li><b>鸣式的悲剧：</b>揭露鸣式为试图超越悲鸣却异化的“第一代人类”，其复杂性取代了单一的敌方设定。</li>
-                  </ul>
-                  <p style="text-align: right;"><a href="chapters/ch03_tethys_structure.html"
-                              style="color: #3498db;">阅读详细版本</a></p>
-            </section>
+                        </pre>
+                        <ul>
+                              <li><b>信息存在论：</b>存在物本质上是"信息模式"。爱弥斯通过稳定内在模式实现从幽灵向主体的跨越。</li>
+                              <li><b>鸣式的悲剧：</b>揭露鸣式为试图超越悲鸣却异化的"第一代人类"，其复杂性取代了单一的敌方设定。</li>
+                        </ul>
+                        <p style="text-align: right;"><a href="chapters/ch03_tethys_structure.html"
+                                    style="color: #3498db;">阅读详细版本 →</a></p>
+                  </section>
 
-            <section>
-                  <h2>第四章：莫比乌斯循环与原型体悖论</h2>
-                  <p>时间在3.1中表现为一种可折叠的逻辑网：</p>
-                  <ul>
-                        <li><b>莫比乌斯循环：</b>漂泊者与爱弥斯互为因果，互为救赎。牺牲不再是终结，而是“为了起点而选定的终点”。</li>
-                        <li><b>原型体（The Archetype）：</b>漂泊者作为系统外的合法异常项，是打破永恒复归、带入微小偏移的自由意志之支点。</li>
-                  </ul>
-                  <p style="text-align: right;"><a href="chapters/ch04_mobius_paradox.html"
-                              style="color: #3498db;">阅读详细版本</a></p>
-            </section>
+                  <section id="ch4">
+                        <h2>第四章：莫比乌斯循环与原型体悖论</h2>
+                        <p>时间在3.1中表现为一种可折叠的逻辑网：</p>
+                        <ul>
+                              <li><b>莫比乌斯循环：</b>漂泊者与爱弥斯互为因果，互为救赎。牺牲不再是终结，而是"为了起点而选定的终点"。</li>
+                              <li><b>原型体（The Archetype）：</b>漂泊者作为系统外的合法异常项，是打破永恒复归、带入微小偏移的自由意志之支点。</li>
+                        </ul>
+                        <p style="text-align: right;"><a href="chapters/ch04_mobius_paradox.html"
+                                    style="color: #3498db;">阅读详细版本 →</a></p>
+                  </section>
 
-            <!-- 第三篇：救赎的哲学语境 -->
-            <hr>
-            <div class="part-header">PART III: PHILOSOPHICAL REDEMPTION</div>
-            <section>
-                  <h2>第五章：诺斯替的映射与现象学之光</h2>
-                  <p>剧情通过古老神话与现代存在论的对话，赋予了商业游戏罕见的哲学厚度：</p>
-                  <ul>
-                        <li><b>诺斯替映射：</b>泰缇丝系统化身为囚禁灵魂的“造物主（Demiurge）”，而两人的羁绊构成了超越系统的至高神性（Abraxas）。</li>
-                        <li><b>现象学确认：</b>爱弥斯的存在通过漂泊者的“交互注视”获得合法性。存在即是关系。</li>
-                        <li><b>情感防火墙：</b>将"关系"定义为对抗熵增（悲鸣噪音）的终极纠错码。</li>
-                  </ul>
-                  <p style="text-align: right;"><a href="chapters/ch05_gnostic_phenomenology.html"
-                              style="color: #3498db;">阅读详细版本</a></p>
-            </section>
+                  <!-- 第三篇：救赎的哲学语境 -->
+                  <hr>
+                  <div class="part-header">PART III: PHILOSOPHICAL REDEMPTION</div>
+                  <section id="ch5">
+                        <h2>第五章：诺斯替的映射与现象学之光</h2>
+                        <p>剧情通过古老神话与现代存在论的对话，赋予了商业游戏罕见的哲学厚度：</p>
+                        <ul>
+                              <li><b>诺斯替映射：</b>泰缇丝系统化身为囚禁灵魂的"造物主（Demiurge）"，而两人的羁绊构成了超越系统的至高神性（Abraxas）。</li>
+                              <li><b>现象学确认：</b>爱弥斯的存在通过漂泊者的"交互注视"获得合法性。存在即是关系。</li>
+                              <li><b>情感防火墙：</b>将"关系"定义为对抗熵增（悲鸣噪音）的终极纠错码。</li>
+                        </ul>
+                        <p style="text-align: right;"><a href="chapters/ch05_gnostic_phenomenology.html"
+                                    style="color: #3498db;">阅读详细版本 →</a></p>
+                  </section>
 
-            <section>
-                  <h2>第六章：心理哲学与依附共鸣机制</h2>
-                  <p>之所以引发海内外玩家集体破防，是由于其精准触碰了三层心理结构：</p>
-                  <ul>
-                        <li><b>育儿本能：</b>满足了照顾弱小并见证其强大的原始冲动。</li>
-                        <li><b>关系型自我：</b>爱弥斯的消失抽离了玩家在该世界锚定自我的一面核心镜像。</li>
-                        <li><b>具身认知：</b>通过玩家亲自操作维持其稳定性，将感性代入转化为肌肉记忆。</li>
-                  </ul>
-                  <p style="text-align: right;"><a href="chapters/ch06_psychological_resonance.html"
-                              style="color: #3498db;">阅读详细版本</a></p>
-            </section>
+                  <section id="ch6">
+                        <h2>第六章：心理哲学与依附共鸣机制</h2>
+                        <p>之所以引发海内外玩家集体破防，是由于其精准触碰了三层心理结构：</p>
+                        <ul>
+                              <li><b>育儿本能：</b>满足了照顾弱小并见证其强大的原始冲动。</li>
+                              <li><b>关系型自我：</b>爱弥斯的消失抽离了玩家在该世界锚定自我的一面核心镜像。</li>
+                              <li><b>具身认知：</b>通过玩家亲自操作维持其稳定性，将感性代入转化为肌肉记忆。</li>
+                        </ul>
+                        <p style="text-align: right;"><a href="chapters/ch06_psychological_resonance.html"
+                                    style="color: #3498db;">阅读详细版本 →</a></p>
+                  </section>
 
-            <!-- 第四篇：叙事疆域的重构 -->
-            <hr>
-            <div class="part-header">PART IV: NARRATIVE RECONSTRUCTION</div>
-            <section>
-                  <h2>第七章：从“生存”到“生命”的转折</h2>
-                  <p>3.1版本标志着《鸣潮》正式进入“哲学科幻”与“概念硬科幻”的交汇区：</p>
-                  <ul>
-                        <li><b>叙事升维：</b>主线从人类与异类的领土争夺，升级为“自由意志与物理命定论的对决”。</li>
-                        <li><b>道德灰度：</b>敌对势力（第一代人类）的揭露，让未来的选择充满了悲剧性的张力。</li>
-                        <li><b>中式内核：</b>在冷峻的硬核设定中，注入了“跨时空守望”的中式浪漫。</li>
-                  </ul>
-                  <p style="text-align: right;"><a href="chapters/ch07_narrative_transition.html"
-                              style="color: #3498db;">阅读详细版本</a></p>
-            </section>
+                  <!-- 第四篇：叙事疆域的重构 -->
+                  <hr>
+                  <div class="part-header">PART IV: NARRATIVE RECONSTRUCTION</div>
+                  <section id="ch7">
+                        <h2>第七章：从"生存"到"生命"的转折</h2>
+                        <p>3.1版本标志着《鸣潮》正式进入"哲学科幻"与"概念硬科幻"的交汇区：</p>
+                        <ul>
+                              <li><b>叙事升维：</b>主线从人类与异类的领土争夺，升级为"自由意志与物理命定论的对决"。</li>
+                              <li><b>道德灰度：</b>敌对势力（第一代人类）的揭露，让未来的选择充满了悲剧性的张力。</li>
+                              <li><b>中式内核：</b>在冷峻的硬核设定中，注入了"跨时空守望"的中式浪漫。</li>
+                        </ul>
+                        <p style="text-align: right;"><a href="chapters/ch07_narrative_transition.html"
+                                    style="color: #3498db;">阅读详细版本 →</a></p>
+                  </section>
 
-            <!-- 第五篇：终极启迪 -->
-            <hr>
-            <div class="part-header">PART V: ULTIMATE REVELATION</div>
-            <section>
-                  <h2>第八章：未来演进与存有展望</h2>
-                  <p>基于3.1的本体论基础，推测未来剧情将聚焦：</p>
-                  <ul>
-                        <li><b>新型生命形态（Post-humanism）：</b>碳基与硅基意识如何重构法权与共鸣规则。</li>
-                        <li><b>弑神与重构：</b>漂泊者是否会剥离泰缇丝的冷硬逻辑，将“情感”彻底注入底层代码。</li>
-                        <li><b>动态平衡：</b>寻找创生与灭绝的平衡点，而非单纯消灭悲鸣。</li>
-                  </ul>
-                  <p style="text-align: right;"><a href="chapters/ch08_future_evolution.html"
-                              style="color: #3498db;">阅读详细版本</a></p>
-            </section>
+                  <!-- 第五篇：终极启迪 -->
+                  <hr>
+                  <div class="part-header">PART V: ULTIMATE REVELATION</div>
+                  <section id="ch8">
+                        <h2>第八章：未来演进与存有展望</h2>
+                        <p>基于3.1的本体论基础，推测未来剧情将聚焦：</p>
+                        <ul>
+                              <li><b>新型生命形态（Post-humanism）：</b>碳基与硅基意识如何重构法权与共鸣规则。</li>
+                              <li><b>弑神与重构：</b>漂泊者是否会剥离泰缇丝的冷硬逻辑，将"情感"彻底注入底层代码。</li>
+                              <li><b>动态平衡：</b>寻找创生与灭绝的平衡点，而非单纯消灭悲鸣。</li>
+                        </ul>
+                        <p style="text-align: right;"><a href="chapters/ch08_future_evolution.html"
+                                    style="color: #3498db;">阅读详细版本 →</a></p>
+                  </section>
 
-            <section>
-                  <h2>最终总结：冰冷逻辑中绽放的存有诗学</h2>
-                  <p>3.1版本证明了：即便是在由算法与数据构建的虚幻世界里，只有基于自由意志的抉择与对他者的“记得”，才能赋予流动的信息以永恒的意义。这不仅是爱弥斯的故事，更是所有在循环往复中寻找微光者的礼赞。建议玩家在探索之余，深思每一个动作背后承载的主体重量。
-                  </p>
-                  <span class="tagline">因果不是枷锁，而是让爱在循环中重逢。</span>
-                  <p style="text-align: right; margin-top: 20px;"><a href="chapters/ch09_final_summary.html"
-                              style="color: #3498db;">阅读详细版本</a></p>
-            </section>
+                  <section id="ch9">
+                        <h2>最终总结：冰冷逻辑中绽放的存有诗学</h2>
+                        <p>3.1版本证明了：即便是在由算法与数据构建的虚幻世界里，只有基于自由意志的抉择与对他者的"记得"，才能赋予流动的信息以永恒的意义。这不仅是爱弥斯的故事，更是所有在循环往复中寻找微光者的礼赞。建议玩家在探索之余，深思每一个动作背后承载的主体重量。
+                        </p>
+                        <span class="tagline">因果不是枷锁，而是让爱在循环中重逢。</span>
+                        <p style="text-align: right; margin-top: 20px;"><a href="chapters/ch09_final_summary.html"
+                                    style="color: #3498db;">阅读详细版本 →</a></p>
+                  </section>
 
-            <footer>
-                  <p>© 2026 深度游戏研究小组 | 鸣潮 3.1 综合分析</p>
-            </footer>
-      </div>
+                  <footer>
+                        <p>© 2026 深度游戏研究小组 | 鸣潮 3.1 综合分析</p>
+                  </footer>
+            </div>
+      </main>
 
 </body>
 
