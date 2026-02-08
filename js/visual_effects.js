@@ -59,7 +59,7 @@ function initParticles() {
             this.x += this.speedX;
             this.y -= this.speedY; // Tend upwards
             this.life--;
-            
+
             // Fade in/out
             if (this.life < 50) {
                 this.opacity -= this.fadeSpeed;
@@ -131,3 +131,15 @@ function initScrollReveal() {
         observer.observe(el);
     });
 }
+
+
+// Global Sidebar Toggle
+function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+        sidebar.classList.toggle('open');
+    }
+}
+
+// Make it available globally
+window.toggleSidebar = toggleSidebar;

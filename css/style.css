@@ -278,7 +278,9 @@ h1::before {
 }
 
 .version-badge {
-    display: inline-block;
+    display: block;
+    width: fit-content;
+    margin: 0 auto 20px auto;
     background: transparent;
     border: 1px solid var(--accent-cyan);
     color: var(--accent-cyan);
@@ -287,7 +289,6 @@ h1::before {
     font-weight: 600;
     font-size: 1.1em;
     letter-spacing: 2px;
-    margin-bottom: 20px;
     position: relative;
 }
 
