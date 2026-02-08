@@ -40,7 +40,8 @@
 body {
     font-family: var(--font-body);
     background-color: var(--primary-bg);
-    background-image: url('../assets/tethys_digital_background.png'); /* Will need to ensure path is correct */
+    background-image: url('../assets/tethys_digital_background.png');
+    /* Will need to ensure path is correct */
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -562,25 +563,52 @@ footer {
     }
 
     body {
-        font-size: 16px;
+        font-size: 15px;
+        /* Slightly smaller text */
     }
 
     .main-content {
         margin-left: 0;
-        padding: 80px 20px 40px 20px;
+        padding: 60px 20px 40px 20px;
+        /* Reduced top padding */
         max-width: 100%;
     }
 
+    /* Override inline styles for better mobile spacing */
+    nav {
+        margin-bottom: 20px !important;
+    }
+
+    header {
+        margin-bottom: 40px;
+        /* Reduced from 100px */
+        padding-bottom: 20px;
+    }
+
+    header::after {
+        width: 60px;
+        /* Smaller underline */
+    }
+
+    .version-badge {
+        font-size: 0.9em;
+        padding: 4px 12px;
+        margin-bottom: 10px;
+    }
+
     h1 {
-        font-size: 2em;
+        font-size: 1.8em;
+        margin-bottom: 10px;
     }
 
     h2 {
-        font-size: 1.6em;
+        font-size: 1.4em;
+        margin-bottom: 20px;
     }
 
     section {
-        padding: 30px 20px;
+        padding: 25px 15px;
+        margin-bottom: 30px;
     }
 
     .sidebar {
@@ -597,11 +625,13 @@ footer {
     .mobile-menu-btn {
         display: flex;
         position: fixed;
-        top: 20px;
-        left: 20px;
-        width: 45px;
-        height: 45px;
-        background: rgba(11, 15, 25, 0.8);
+        top: 15px;
+        /* Tighter positioning */
+        left: 15px;
+        width: 35px;
+        /* Smaller button */
+        height: 35px;
+        background: rgba(11, 15, 25, 0.9);
         border: 1px solid var(--accent-cyan);
         border-radius: 4px;
         cursor: pointer;
@@ -613,7 +643,8 @@ footer {
 
     .mobile-menu-btn span {
         display: block;
-        width: 24px;
+        width: 18px;
+        /* Smaller icon */
         height: 2px;
         background: var(--accent-cyan);
         position: relative;
@@ -630,11 +661,11 @@ footer {
     }
 
     .mobile-menu-btn span::before {
-        top: -8px;
+        top: -6px;
     }
 
     .mobile-menu-btn span::after {
-        top: 8px;
+        top: 6px;
     }
 }
 
