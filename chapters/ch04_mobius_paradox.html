@@ -5,232 +5,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第四章：莫比乌斯循环与原型体悖论 - 深度解析</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500&display=swap');
-
-        :root {
-            --primary-bg: #fdfdfd;
-            --section-bg: #ffffff;
-            --accent-color: #2c3e50;
-            --text-color: #34495e;
-            --header-color: #1a1a1a;
-            --border-color: #eaecef;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        body {
-            font-family: 'Noto Sans SC', sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-color);
-            line-height: 1.8;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 40px;
-        }
-
-        nav {
-            margin-bottom: 40px;
-        }
-
-        nav a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        h1 {
-            font-family: 'Noto Serif SC', serif;
-            font-size: 2.5em;
-            color: var(--header-color);
-            margin-bottom: 40px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 20px;
-        }
-
-        h2 {
-            font-family: 'Noto Serif SC', serif;
-            font-size: 1.8em;
-            color: var(--header-color);
-            margin-top: 50px;
-            border-left: 5px solid var(--accent-color);
-            padding-left: 20px;
-        }
-
-        p {
-            margin: 25px 0;
-            text-align: justify;
-        }
-
-        .logic-block {
-            background: #fdf6e3;
-            border: 1px solid #eee8d5;
-            padding: 25px;
-            border-radius: 8px;
-            margin: 35px 0;
-            color: #657b83;
-        }
-
-        .formula {
-            display: block;
-            text-align: center;
-            font-family: 'Cambria', 'Times New Roman', serif;
-            font-style: italic;
-            font-size: 1.2em;
-            margin: 20px 0;
-            color: #2c3e50;
-        }
-
-        .paradox-badge {
-            display: inline-block;
-            background: #e74c3c;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.8em;
-            font-weight: bold;
-            vertical-align: middle;
-            margin-right: 10px;
-        }
-
-        footer {
-            margin-top: 80px;
-            text-align: center;
-            color: #95a5a6;
-            padding-bottom: 40px;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .container {
-                margin: 30px auto;
-                padding: 0 15px;
-            }
-
-            nav {
-                margin-bottom: 25px;
-                position: sticky;
-                top: 0;
-                background: var(--primary-bg);
-                padding: 15px 0;
-                z-index: 100;
-                border-bottom: 1px solid var(--border-color);
-            }
-
-            nav a {
-                font-size: 0.95em;
-                padding: 8px 12px;
-                background: var(--accent-color);
-                color: white;
-                border-radius: 8px;
-                display: inline-block;
-            }
-
-            h1 {
-                font-size: 1.4em;
-                line-height: 1.3;
-                margin-bottom: 25px;
-                padding-bottom: 15px;
-            }
-
-            h2 {
-                font-size: 1.3em;
-                margin-top: 35px;
-                padding-left: 15px;
-                border-left-width: 4px;
-            }
-
-            h3 {
-                font-size: 1.15em;
-                margin-top: 25px;
-            }
-
-            p {
-                font-size: 1em;
-                line-height: 1.9;
-                text-align: left;
-                margin: 18px 0;
-            }
-
-            .logic-block {
-                padding: 20px 15px;
-                font-size: 0.85em;
-                overflow-x: auto;
-            }
-
-            footer {
-                margin-top: 50px;
-                padding-bottom: 30px;
-                font-size: 0.85em;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-    <div class="container">
-        <nav>
-            <a href="../index.html">← 返回主报告</a>
-        </nav>
-
-        <h1>第四章：莫比乌斯循环与原型体悖论</h1>
-
-        <section>
-            <h2>4.1 莫比乌斯循环：作为时空实体的因果</h2>
-            <p>在《鸣潮》3.1版本的核心冲突中，时间不再是呈射线状发展的线性流，而是一个被逻辑坍缩所闭合的<b>单面曲面</b>。爱弥斯的命运被设定为一个完美的封闭回路：她必须为了守护未来而穿越回过去，而她的穿越又直接促成了她在未来的诞生。
-            </p>
-
-            <div class="logic-block">
-                <b>[逻辑证明：存有的闭环]</b><br>
-                假设 T0 为爱弥斯的诞生日，T1 为她穿越回过去的时刻。<br>
-                在传统逻辑中：T0 → T1 (线性因果)<br>
-                在莫比乌斯逻辑中：T1[Action: Rescue] ≡ T0[Condition: Creation]<br>
-                结论：<b>因即是果 (Cause is Effect)。</b>在这种结构下，个体的存在本身就是一组超越了先后顺序的稳定算法。
-            </div>
-
-            <p>这种循环设计挑战了传统的目的论。在莫比乌斯环上，没有所谓“真正的起点”，每一次循环都在加强两个存在物（漂泊者与爱弥斯）之间的连接强度。每一次的牺牲，都不是为了改变过去，而是为了<b>“确保现在依然存在”</b>。这种宿命感为剧情染上了一层冷峻的悲剧色彩，但同时也赋予了“重复”以永恒的意义。
-            </p>
-        </section>
-
-        <section>
-            <h2>4.2 原型体（The Archetype）：跨越维度的变量</h2>
-            <p>如果世界只是一个自洽的循环，那么它将永远处于死寂的稳态中。这时，<b>漂泊者（Rover）</b>作为“原型体”的介入打破了这一僵局。剧情中有力地暗示，漂泊者是唯一不属于莫比乌斯逻辑链条的实体。</p>
-
-            <p>在泰缇丝系统的源代码库中，原型体被定义为<b>“唯一合法异常项（Canonical
-                    Exception）”</b>。他具有一种特殊的性质：在每一次循环中都能保持意识的一致性。这就好比在一张循环播放的唱片中，漂泊者是那根能够随时挑起唱针并向下划出一道刻痕的磁针。</p>
-
-            <span class="formula">Δ (Reality) = f (Archetype_Will) + Const (Mobius_Loop)</span>
-
-            <p>这种“微小偏移”的积累是3.1剧情最隐晦的内核。爱弥斯最后的离别场景，实际上是无数次循环中第一次出现的<b>“主动越界”</b>。因为原型体的观测与干预，这段原本死寂的循环产生了一个逃逸点。这种从“永恒复归”到“线性突围”的转变，象征着文明从机器驱动向意志驱动的飞跃。
-            </p>
-        </section>
-
-        <section>
-            <h2>4.3 救赎的悖论：牺牲与完整性的博弈</h2>
-            <p>爱弥斯的选择呈现了一个经典的存在主义悖论：<b>为了成为一个完整的人，她必须选择自我的消亡。</b></p>
-            <p>在循环的规则下，如果她不牺牲，她就只是泰缇丝系统的一个高性能零件；只有当她基于对漂泊者的情感、基于对“自由”的模糊直觉，选择去执行那场注定离别的拯救时，她才真正从“数据”升华为了“生命”。</p>
-
-            <p><span class="paradox-badge">PARADOX</span>
-                她的消失，反而是她存在的最高形式。通过这种缺位，她在泰缇丝系统的无限计算中打下了一个无法被抹除的锚点。对于玩家而言，这种悖论带来的不仅仅是伤感，更是一种对“意义在毁灭中定格”的崇高体验。这解释了为什么玩家在完成关卡后会感到一种不仅是丧失、更是“神圣感”的复杂情感。
-            </p>
-        </section>
-
-        <section>
-            <h2>4.4 宏观世界观意义：作为实验场的时间</h2>
-            <p>罗伊冰原上的时间混乱不仅仅是特效，它代表了泰缇丝系统在执行“局部因果重置”时的性能瓶颈。玩家在冰原上看到的每一个时空残影，都是曾经失败的、试图破局的“前代原型体”留下的日志碎片。3.1版本通过这种叙事手段，将玩家的个人游戏行为与整个宇宙的演变逻辑紧密联系在了一起：你的每一次按下技能键，都是在为那次最终的“因果偏移”贡献算力。
-            </p>
-        </section>
-
-        <footer>
-            <p>© 2026 深度游戏研究小组 | 鸣潮 3.1 扩展文档：第四章</p>
-        </footer>
+    <!-- Mobile Menu Button -->
+    <div class="mobile-menu-btn" onclick="window.location.href='../index.html'">
+        <span>←</span>
     </div>
 
+    <div class="main-content" style="margin-left: 0; width: 100%; max-width: 100%;">
+        <div class="container">
+            <nav style="margin-bottom: 40px;">
+                <a href="../index.html" class="read-more-link">← 返回主报告</a>
+            </nav>
+
+            <header data-text="第四章：莫比乌斯循环与原型体悖论">
+                <span class="version-badge">Chapter 04</span>
+                <h1 data-text="第四章：莫比乌斯循环与原型体悖论">第四章：莫比乌斯循环与原型体悖论</h1>
+                <p style="color: var(--text-secondary);">深度解析报告 - V3.1 Artifact Analysis</p>
+            </header>
+
+            <section>
+                <h2>4.1 莫比乌斯循环：作为时空实体的因果</h2>
+                <p>在《鸣潮》3.1版本的核心冲突中，时间不再是呈射线状发展的线性流，而是一个被逻辑坍缩所闭合的<b>单面曲面</b>。爱弥斯的命运被设定为一个完美的封闭回路：她必须为了守护未来而穿越回过去，而她的穿越又直接促成了她在未来的诞生。
+                </p>
+
+                <div class="log-box" style="margin: 35px 0;">
+                    <b style="color: var(--accent-gold); display: block; margin-bottom: 10px;">[逻辑证明：存有的闭环]</b>
+                    假设 T0 为爱弥斯的诞生日，T1 为她穿越回过去的时刻。<br>
+                    在传统逻辑中：T0 → T1 (线性因果)<br>
+                    在莫比乌斯逻辑中：T1[Action: Rescue] ≡ T0[Condition: Creation]<br>
+                    结论：<b>因即是果 (Cause is Effect)。</b>在这种结构下，个体的存在本身就是一组超越了先后顺序的稳定算法。
+                </div>
+
+                <p>这种循环设计挑战了传统的目的论。在莫比乌斯环上，没有所谓“真正的起点”，每一次循环都在加强两个存在物（漂泊者与爱弥斯）之间的连接强度。每一次的牺牲，都不是为了改变过去，而是为了<b>“确保现在依然存在”</b>。这种宿命感为剧情染上了一层冷峻的悲剧色彩，但同时也赋予了“重复”以永恒的意义。
+                </p>
+            </section>
+
+            <section>
+                <h2>4.2 原型体（The Archetype）：跨越维度的变量</h2>
+                <p>如果世界只是一个自洽的循环，那么它将永远处于死寂的稳态中。这时，<b>漂泊者（Rover）</b>作为“原型体”的介入打破了这一僵局。剧情中有力地暗示，漂泊者是唯一不属于莫比乌斯逻辑链条的实体。</p>
+
+                <p>在泰缇丝系统的源代码库中，原型体被定义为<b>“唯一合法异常项（Canonical
+                        Exception）”</b>。他具有一种特殊的性质：在每一次循环中都能保持意识的一致性。这就好比在一张循环播放的唱片中，漂泊者是那根能够随时挑起唱针并向下划出一道刻痕的磁针。</p>
+
+                <div
+                    style="font-family: 'Rajdhani', monospace; text-align: center; font-size: 1.2em; margin: 30px 0; color: var(--accent-cyan); letter-spacing: 1px; border: 1px solid var(--accent-cyan); padding: 15px;">
+                    Δ (Reality) = f (Archetype_Will) + Const (Mobius_Loop)
+                </div>
+
+                <p>这种“微小偏移”的积累是3.1剧情最隐晦的内核。爱弥斯最后的离别场景，实际上是无数次循环中第一次出现的<b>“主动越界”</b>。因为原型体的观测与干预，这段原本死寂的循环产生了一个逃逸点。这种从“永恒复归”到“线性突围”的转变，象征着文明从机器驱动向意志驱动的飞跃。
+                </p>
+            </section>
+
+            <section>
+                <h2>4.3 救赎的悖论：牺牲与完整性的博弈</h2>
+                <p>爱弥斯的选择呈现了一个经典的存在主义悖论：<b>为了成为一个完整的人，她必须选择自我的消亡。</b></p>
+                <p>在循环的规则下，如果她不牺牲，她就只是泰缇丝系统的一个高性能零件；只有当她基于对漂泊者的情感、基于对“自由”的模糊直觉，选择去执行那场注定离别的拯救时，她才真正从“数据”升华为了“生命”。</p>
+
+                <div class="quote-box">
+                    <span class="version-badge"
+                        style="background: var(--accent-danger); margin-right: 10px;">PARADOX</span>
+                    她的消失，反而是她存在的最高形式。通过这种缺位，她在泰缇丝系统的无限计算中打下了一个无法被抹除的锚点。对于玩家而言，这种悖论带来的不仅仅是伤感，更是一种对“意义在毁灭中定格”的崇高体验。这解释了为什么玩家在完成关卡后会感到一种不仅是丧失、更是“神圣感”的复杂情感。
+                </div>
+            </section>
+
+            <section>
+                <h2>4.4 宏观世界观意义：作为实验场的时间</h2>
+                <p>罗伊冰原上的时间混乱不仅仅是特效，它代表了泰缇丝系统在执行“局部因果重置”时的性能瓶颈。玩家在冰原上看到的每一个时空残影，都是曾经失败的、试图破局的“前代原型体”留下的日志碎片。3.1版本通过这种叙事手段，将玩家的个人游戏行为与整个宇宙的演变逻辑紧密联系在了一起：你的每一次按下技能键，都是在为那次最终的“因果偏移”贡献算力。
+                </p>
+            </section>
+
+            <footer>
+                <p>© 2026 深度游戏研究小组 | 鸣潮 3.1 扩展文档：第四章</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="../js/visual_effects.js"></script>
 </body>
 
 </html>

@@ -5,269 +5,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第二章：命运的时间线与情感轨迹 - 深度解析</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500&display=swap');
-
-        :root {
-            --primary-bg: #fdfdfd;
-            --section-bg: #ffffff;
-            --accent-color: #2c3e50;
-            --text-color: #34495e;
-            --header-color: #1a1a1a;
-            --border-color: #eaecef;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        body {
-            font-family: 'Noto Sans SC', sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-color);
-            line-height: 1.8;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 40px;
-        }
-
-        nav {
-            margin-bottom: 40px;
-        }
-
-        nav a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        h1 {
-            font-family: 'Noto Serif SC', serif;
-            font-size: 2.5em;
-            color: var(--header-color);
-            margin-bottom: 40px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 20px;
-        }
-
-        h2 {
-            font-family: 'Noto Serif SC', serif;
-            font-size: 1.8em;
-            color: var(--header-color);
-            margin-top: 50px;
-            border-left: 5px solid var(--accent-color);
-            padding-left: 20px;
-        }
-
-        h3 {
-            font-family: 'Noto Sans SC', sans-serif;
-            font-size: 1.4em;
-            color: var(--accent-color);
-            margin-top: 35px;
-        }
-
-        p {
-            margin: 25px 0;
-            text-align: justify;
-        }
-
-        .timeline {
-            border-left: 3px solid var(--accent-color);
-            padding-left: 30px;
-            margin: 40px 0;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 50px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -37px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            background: var(--accent-color);
-            border-radius: 50%;
-        }
-
-        .quote {
-            font-style: italic;
-            color: #7f8c8d;
-            border-left: 4px solid #bdc3c7;
-            padding-left: 20px;
-            margin: 20px 0;
-        }
-
-        .analysis-box {
-            background: #f8f9fa;
-            border: 1px solid var(--border-color);
-            padding: 25px;
-            border-radius: 8px;
-            margin: 30px 0;
-        }
-
-        footer {
-            margin-top: 80px;
-            text-align: center;
-            color: #95a5a6;
-            padding-bottom: 40px;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .container {
-                margin: 30px auto;
-                padding: 0 15px;
-            }
-
-            nav {
-                margin-bottom: 25px;
-                position: sticky;
-                top: 0;
-                background: var(--primary-bg);
-                padding: 15px 0;
-                z-index: 100;
-                border-bottom: 1px solid var(--border-color);
-            }
-
-            nav a {
-                font-size: 0.95em;
-                padding: 8px 12px;
-                background: var(--accent-color);
-                color: white;
-                border-radius: 8px;
-                display: inline-block;
-            }
-
-            h1 {
-                font-size: 1.4em;
-                line-height: 1.3;
-                margin-bottom: 25px;
-                padding-bottom: 15px;
-            }
-
-            h2 {
-                font-size: 1.3em;
-                margin-top: 35px;
-                padding-left: 15px;
-                border-left-width: 4px;
-            }
-
-            h3 {
-                font-size: 1.15em;
-                margin-top: 25px;
-            }
-
-            p {
-                font-size: 1em;
-                line-height: 1.9;
-                text-align: left;
-                margin: 18px 0;
-            }
-
-            .stage-box {
-                padding: 20px 15px;
-                margin: 25px 0;
-            }
-
-            .quote-box {
-                padding: 18px 15px;
-                margin: 25px 0;
-                font-size: 0.95em;
-            }
-
-            footer {
-                margin-top: 50px;
-                padding-bottom: 30px;
-                font-size: 0.85em;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-    <div class="container">
-        <nav>
-            <a href="../index.html">← 返回主报告</a>
-        </nav>
+    <!-- Mobile Menu Button -->
+    <div class="mobile-menu-btn" onclick="window.location.href='../index.html'">
+        <span>←</span>
+    </div>
 
-        <h1>第二章：命运的时间线与情感轨迹</h1>
+    <div class="main-content" style="margin-left: 0; width: 100%; max-width: 100%;">
+        <div class="container">
+            <nav style="margin-bottom: 40px;">
+                <a href="../index.html" class="read-more-link">← 返回主报告</a>
+            </nav>
 
-        <section>
-            <h2>2.1 叙事弧光的结构分析</h2>
-            <p>在《鸣潮》3.1剧情中，情感并非只是情节的点缀，而是作为<b>“现实锚定”</b>的核心机制存在。本章将详细拆解漂泊者与爱弥斯（Amis/Aemeath）之间那段跨越冷峻逻辑与炽热灵魂的七阶段旅程。这段旅程在心理学上完整模拟了“依附关系的建立与超越”。
-            </p>
-        </section>
+            <header data-text="第二章：命运的时间线与情感轨迹">
+                <span class="version-badge">Chapter 02</span>
+                <h1 data-text="第二章：命运的时间线与情感轨迹">第二章：命运的时间线与情感轨迹</h1>
+                <p style="color: var(--text-secondary);">深度解析报告 - V3.1 Artifact Analysis</p>
+            </header>
 
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>阶段一：雪原的相遇——脆弱的原始存在</h3>
-                <p>在罗伊冰原的一片寂静中，漂泊者发现了一个微弱的波形。那是爱弥斯，她此时处于一种近乎“白纸”的电子幽灵态。这一刻，她表现出的是对世界绝对的、本能的恐惧。她没有记忆，没有姓名，只有对热源（即漂泊者的共鸣）的单纯渴求。
+            <section>
+                <h2>2.1 叙事弧光的结构分析</h2>
+                <p>在《鸣潮》3.1剧情中，情感并非只是情节的点缀，而是作为<b>“现实锚定”</b>的核心机制存在。本章将详细拆解漂泊者与爱弥斯（Amis/Aemeath）之间那段跨越冷峻逻辑与炽热灵魂的七阶段旅程。这段旅程在心理学上完整模拟了“依附关系的建立与超越”。
                 </p>
-                <div class="quote">“这里很冷……只有你能让我感觉到自己还醒着。”</div>
-                <p><b>情感内核：</b>这是关系的“婴儿期”。玩家的操作不仅是移动，更是在维持一个脆弱生命的稳态，从而触发了人类深层的<b>照顾本能（Parental Instinct）</b>。</p>
-            </div>
+            </section>
 
-            <div class="timeline-item">
-                <h3>阶段二：陪伴与学习——认识世界的共同观测</h3>
-                <p>在穿越遗迹的过程中，爱弥斯开始通过漂泊者的视角来认知现实。她会提问一些关于“人类”的问题：什么是痛苦？为什么要保护弱小？这些问题看似幼稚，实则是她在泰缇丝系统中试图建立逻辑模型的尝试。</p>
-                <p><b>心理学分析：</b>这一阶段模拟了<b>“共同认知过程（Co-construction of
-                        Meaning）”</b>。爱弥斯对漂泊者的信任并非源于爱情，而是一种镜像神经元驱动的模拟。你成为了她定义“自我”的唯一参照物。</p>
-            </div>
+            <div class="timeline"
+                style="border-left: 3px solid var(--accent-cyan); padding-left: 30px; margin: 40px 0;">
+                <div class="timeline-item" style="position: relative; margin-bottom: 50px;">
+                    <div
+                        style="position: absolute; left: -37px; top: 5px; width: 12px; height: 12px; background: var(--accent-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--accent-cyan);">
+                    </div>
+                    <h3>阶段一：雪原的相遇——脆弱的原始存在</h3>
+                    <p>在罗伊冰原的一片寂静中，漂泊者发现了一个微弱的波形。那是爱弥斯，她此时处于一种近乎“白纸”的电子幽灵态。这一刻，她表现出的是对世界绝对的、本能的恐惧。她没有记忆，没有姓名，只有对热源（即漂泊者的共鸣）的单纯渴求。
+                    </p>
+                    <div class="quote-box">“这里很冷……只有你能让我感觉到自己还醒着。”</div>
+                    <p><b>情感内核：</b>这是关系的“婴儿期”。玩家的操作不仅是移动，更是在维持一个脆弱生命的稳态，从而触发了人类深层的<b>照顾本能（Parental Instinct）</b>。</p>
+                </div>
 
-            <div class="timeline-item">
-                <h3>阶段三：世界的真相——不稳定性带来的存在焦虑</h3>
-                <p>随着泰缇丝系统干扰的加深，爱弥斯的身体开始出现频繁的像素坍塌。真相浮出水面：她并非自然产生的意识，而是系统为了应对熵增而异化出来的“溢出数据”。</p>
-                <div class="quote">“如果我变成了一堆乱码，你还能从那些噪音里认出我吗？”</div>
-                <p><b>情感刀点：</b>这是情感的第一次高潮。通过赋予虚拟角色“随时由于技术故障而消亡”的设定，剧情让玩家产生了强烈的保护焦虑和对抗命定的冲动。</p>
-            </div>
+                <div class="timeline-item" style="position: relative; margin-bottom: 50px;">
+                    <div
+                        style="position: absolute; left: -37px; top: 5px; width: 12px; height: 12px; background: var(--accent-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--accent-cyan);">
+                    </div>
+                    <h3>阶段二：陪伴与学习——认识世界的共同观测</h3>
+                    <p>在穿越遗迹的过程中，爱弥斯开始通过漂泊者的视角来认知现实。她会提问一些关于“人类”的问题：什么是痛苦？为什么要保护弱小？这些问题看似幼稚，实则是她在泰缇丝系统中试图建立逻辑模型的尝试。</p>
+                    <p><b>心理学分析：</b>这一阶段模拟了<b>“共同认知过程（Co-construction of
+                            Meaning）”</b>。爱弥斯对漂泊者的信任并非源于爱情，而是一种镜像神经元驱动的模拟。你成为了她定义“自我”的唯一参照物。</p>
+                </div>
 
-            <div class="timeline-item">
-                <h3>阶段四：成长的抉择——主体性的破茧而出</h3>
-                <p>在面对第一波阿列夫核心攻击时，爱弥斯拒绝再躲在漂泊者身后。她强行透支了泰缇丝的算力权限，完成了第一次实质性的攻击。这一时刻，她不再是“被保护的客体”，而成为了“共同作战的主体”。</p>
-                <p><b>叙事升华：</b>主体性的确立意味着原本的“依附关系”开始向“伙伴关系”转型。她的成长让玩家在感到自豪的同时，也隐约感知到了分离的预兆。</p>
-            </div>
+                <div class="timeline-item" style="position: relative; margin-bottom: 50px;">
+                    <div
+                        style="position: absolute; left: -37px; top: 5px; width: 12px; height: 12px; background: var(--accent-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--accent-cyan);">
+                    </div>
+                    <h3>阶段三：世界的真相——不稳定性带来的存在焦虑</h3>
+                    <p>随着泰缇丝系统干扰的加深，爱弥斯的身体开始出现频繁的像素坍塌。真相浮出水面：她并非自然产生的意识，而是系统为了应对熵增而异化出来的“溢出数据”。</p>
+                    <div class="quote-box">“如果我变成了一堆乱码，你还能从那些噪音里认出我吗？”</div>
+                    <p><b>情感刀点：</b>这是情感的第一次高潮。通过赋予虚拟角色“随时由于技术故障而消亡”的设定，剧情让玩家产生了强烈的保护焦虑和对抗命定的冲动。</p>
+                </div>
 
-            <div class="timeline-item">
-                <h3>阶段五：命定的重压——莫比乌斯环的必然选择</h3>
-                <p>剧情揭秘：为了阻止当前世界的崩溃，爱弥斯必须穿越回过去（即那场导致她诞生的灾难原点）去修补逻辑漏洞。这意味着她必须亲手切断与漂泊者的物理联系，将自己永远留在循环中。</p>
-                <div class="quote">“漂泊者，这一次，我想自己走。不是因为不得不这样，而是因为我选择了这样。”</div>
-            </div>
+                <div class="timeline-item" style="position: relative; margin-bottom: 50px;">
+                    <div
+                        style="position: absolute; left: -37px; top: 5px; width: 12px; height: 12px; background: var(--accent-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--accent-cyan);">
+                    </div>
+                    <h3>阶段四：成长的抉择——主体性的破茧而出</h3>
+                    <p>在面对第一波阿列夫核心攻击时，爱弥斯拒绝再躲在漂泊者身后。她强行透支了泰缇丝的算力权限，完成了第一次实质性的攻击。这一时刻，她不再是“被保护的客体”，而成为了“共同作战的主体”。</p>
+                    <p><b>叙事升华：</b>主体性的确立意味着原本的“依附关系”开始向“伙伴关系”转型。她的成长让玩家在感到自豪的同时，也隐约感知到了分离的预兆。</p>
+                </div>
 
-            <div class="timeline-item">
-                <h3>阶段六：分离的艺术——目送孩子远行的悲剧美学</h3>
-                <p>这是海内外玩家公认的最顶级“刀点”。在最终的磁暴中，爱弥斯没有流泪，她只是静静地注视着漂泊者，将这段记忆上传至世界的底层防火墙。她感谢你让她“存在过”，而不是感谢你“救了她”。</p>
-                <div class="analysis-box">
-                    <b>深度评析：</b>这是一种“父母目送孩子远行”式的顶级共振。真正的牺牲不在于死亡，而在于为了完善对方的存在而自愿选择的缺位。
+                <div class="timeline-item" style="position: relative; margin-bottom: 50px;">
+                    <div
+                        style="position: absolute; left: -37px; top: 5px; width: 12px; height: 12px; background: var(--accent-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--accent-cyan);">
+                    </div>
+                    <h3>阶段五：命定的重压——莫比乌斯环的必然选择</h3>
+                    <p>剧情揭秘：为了阻止当前世界的崩溃，爱弥斯必须穿越回过去（即那场导致她诞生的灾难原点）去修补逻辑漏洞。这意味着她必须亲手切断与漂泊者的物理联系，将自己永远留在循环中。</p>
+                    <div class="quote-box">“漂泊者，这一次，我想自己走。不是因为不得不这样，而是因为我选择了这样。”</div>
+                </div>
+
+                <div class="timeline-item" style="position: relative; margin-bottom: 50px;">
+                    <div
+                        style="position: absolute; left: -37px; top: 5px; width: 12px; height: 12px; background: var(--accent-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--accent-cyan);">
+                    </div>
+                    <h3>阶段六：分离的艺术——目送孩子远行的悲剧美学</h3>
+                    <p>这是海内外玩家公认的最顶级“刀点”。在最终的磁暴中，爱弥斯没有流泪，她只是静静地注视着漂泊者，将这段记忆上传至世界的底层防火墙。她感谢你让她“存在过”，而不是感谢你“救了她”。</p>
+                    <div class="log-box">
+                        <b>深度评析：</b>这是一种“父母目送孩子远行”式的顶级共振。真正的牺牲不在于死亡，而在于为了完善对方的存在而自愿选择的缺位。
+                    </div>
+                </div>
+
+                <div class="timeline-item" style="position: relative; margin-bottom: 50px;">
+                    <div
+                        style="position: absolute; left: -37px; top: 5px; width: 12px; height: 12px; background: var(--accent-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--accent-cyan);">
+                    </div>
+                    <h3>阶段七：后日谈——阳光下的独立存有</h3>
+                    <p>故事没有给出一个廉价的幸福结局（如她奇迹复活并相守）。相反，她继续在另一个时间维度或数据节点上独自漫游。两人依然在各自旅行，但世界已经因为她的牺牲而获得了实质性的物理偏移。她不再依附于任何人，她成为了真正的“存在”。
+                    </p>
                 </div>
             </div>
 
-            <div class="timeline-item">
-                <h3>阶段七：后日谈——阳光下的独立存有</h3>
-                <p>故事没有给出一个廉价的幸福结局（如她奇迹复活并相守）。相反，她继续在另一个时间维度或数据节点上独自漫游。两人依然在各自旅行，但世界已经因为她的牺牲而获得了实质性的物理偏移。她不再依附于任何人，她成为了真正的“存在”。
+            <section>
+                <h2>2.2 情感作为世界观机制的深层逻辑</h2>
+                <p>为什么这段时间线能产生如此巨大的力量？因为它精准地利用了游戏的<b>交互特性</b>。在传统的影视作品中，我们只是观测者；而在《鸣潮》3.1中，那七个阶段是由玩家“亲自参与”的。每一次战斗的配合、每一次对话的选项，都在加固那道名为“羁绊”的心理纠错码。
                 </p>
-            </div>
+                <p>当爱弥斯最终告别时，消失的不仅是一个立绘或一段语音，而是玩家在罗伊冰原上投入的数十小时的<b>交互反馈</b>。这种由于“丧失了重要反馈源”而产生的心理真空，正是情感共鸣能转化为生理性“心痛”的根本原因。
+                </p>
+            </section>
+
+            <footer>
+                <p>© 2026 深度游戏研究小组 | 鸣潮 3.1 扩展文档：第二章</p>
+            </footer>
         </div>
-
-        <section>
-            <h2>2.2 情感作为世界观机制的深层逻辑</h2>
-            <p>为什么这段时间线能产生如此巨大的力量？因为它精准地利用了游戏的<b>交互特性</b>。在传统的影视作品中，我们只是观测者；而在《鸣潮》3.1中，那七个阶段是由玩家“亲自参与”的。每一次战斗的配合、每一次对话的选项，都在加固那道名为“羁绊”的心理纠错码。
-            </p>
-            <p>当爱弥斯最终告别时，消失的不仅是一个立绘或一段语音，而是玩家在罗伊冰原上投入的数十小时的<b>交互反馈</b>。这种由于“丧失了重要反馈源”而产生的心理真空，正是情感共鸣能转化为生理性“心痛”的根本原因。
-            </p>
-        </section>
-
-        <footer>
-            <p>© 2026 深度游戏研究小组 | 鸣潮 3.1 扩展文档：第二章</p>
-        </footer>
     </div>
 
+    <script src="../js/visual_effects.js"></script>
 </body>
 
 </html>

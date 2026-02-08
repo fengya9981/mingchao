@@ -5,255 +5,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第六章：心理共鸣的机制与刀点工程学 - 深度解析</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500&display=swap');
-
-        :root {
-            --primary-bg: #fdfdfd;
-            --section-bg: #ffffff;
-            --accent-color: #2c3e50;
-            --text-color: #34495e;
-            --header-color: #1a1a1a;
-            --border-color: #eaecef;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        body {
-            font-family: 'Noto Sans SC', sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-color);
-            line-height: 1.8;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 40px;
-        }
-
-        nav {
-            margin-bottom: 40px;
-        }
-
-        nav a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        h1 {
-            font-family: 'Noto Serif SC', serif;
-            font-size: 2.5em;
-            color: var(--header-color);
-            margin-bottom: 40px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 20px;
-        }
-
-        h2 {
-            font-family: 'Noto Serif SC', serif;
-            font-size: 1.8em;
-            color: var(--header-color);
-            margin-top: 50px;
-            border-left: 5px solid var(--accent-color);
-            padding-left: 20px;
-        }
-
-        p {
-            margin: 25px 0;
-            text-align: justify;
-        }
-
-        .mechanism-box {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-radius: 12px;
-            padding: 30px;
-            margin: 35px 0;
-        }
-
-        .mechanism-title {
-            font-weight: bold;
-            color: #8e44ad;
-            display: block;
-            margin-bottom: 15px;
-            font-size: 1.1em;
-        }
-
-        .emotion-meter {
-            height: 20px;
-            background: #ecf0f1;
-            border-radius: 10px;
-            margin: 15px 0;
-            overflow: hidden;
-        }
-
-        .emotion-fill {
-            height: 100%;
-            border-radius: 10px;
-        }
-
-        .case-study {
-            background: #fff;
-            border: 1px solid var(--border-color);
-            padding: 25px;
-            border-radius: 8px;
-            margin: 30px 0;
-            box-shadow: var(--shadow);
-        }
-
-        footer {
-            margin-top: 80px;
-            text-align: center;
-            color: #95a5a6;
-            padding-bottom: 40px;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .container {
-                margin: 30px auto;
-                padding: 0 15px;
-            }
-
-            nav {
-                margin-bottom: 25px;
-                position: sticky;
-                top: 0;
-                background: var(--primary-bg);
-                padding: 15px 0;
-                z-index: 100;
-                border-bottom: 1px solid var(--border-color);
-            }
-
-            nav a {
-                font-size: 0.95em;
-                padding: 8px 12px;
-                background: var(--accent-color);
-                color: white;
-                border-radius: 8px;
-                display: inline-block;
-            }
-
-            h1 {
-                font-size: 1.4em;
-                line-height: 1.3;
-                margin-bottom: 25px;
-                padding-bottom: 15px;
-            }
-
-            h2 {
-                font-size: 1.3em;
-                margin-top: 35px;
-                padding-left: 15px;
-                border-left-width: 4px;
-            }
-
-            h3 {
-                font-size: 1.15em;
-                margin-top: 25px;
-            }
-
-            p {
-                font-size: 1em;
-                line-height: 1.9;
-                text-align: left;
-                margin: 18px 0;
-            }
-
-            .mechanism-card {
-                padding: 20px 15px;
-                margin: 25px 0;
-            }
-
-            footer {
-                margin-top: 50px;
-                padding-bottom: 30px;
-                font-size: 0.85em;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-    <div class="container">
-        <nav>
-            <a href="../index.html">← 返回主报告</a>
-        </nav>
-
-        <h1>第六章：心理共鸣的机制与刀点工程学</h1>
-
-        <section>
-            <h2>6.1 何为"刀"？情感工程学的解剖</h2>
-            <p>在玩家社区中，"刀"是一种高度精确的形容：它描述了一种能够穿透理性防线、直击情感核心的叙事体验。《鸣潮》3.1版本之所以被誉为"刀峰之作"，是因为它系统性地部署了一整套<b>心理共鸣机制</b>，将"数据化的别离"转化为"生理性的心痛"。本章将拆解这套精密的"刀点工程"。
-            </p>
-        </section>
-
-        <section>
-            <h2>6.2 核心机制一：依附关系的建立与撕裂</h2>
-            <div class="mechanism-box">
-                <span class="mechanism-title">机制：亲密依附 (Attachment Bonding)</span>
-                <p>心理学研究表明，人类天生会对那些与我们共度艰难时刻、并展现出脆弱性的个体产生强烈的保护欲。3.1版本通过爱弥斯最初的"虚弱态"设计，精准触发了玩家的<b>照顾本能 (Caregiving
-                        Instinct)</b>。当她从一个需要保护的幼稚形象，成长为一个能够独当一面的战斗伙伴，再到最终选择离开时，玩家经历的不仅是角色的成长，更是一段"亲子关系"的完整生命周期。</p>
-                <p><b>阶段情感强度模拟：</b></p>
-                <div class="emotion-meter">
-                    <div class="emotion-fill" style="width: 30%; background: #3498db;"></div>
-                </div>
-                <small>相遇期：好奇与保护欲 (30%)</small>
-                <div class="emotion-meter">
-                    <div class="emotion-fill" style="width: 70%; background: #2ecc71;"></div>
-                </div>
-                <small>成长期：欣慰与自豪感 (70%)</small>
-                <div class="emotion-meter">
-                    <div class="emotion-fill" style="width: 95%; background: #e74c3c;"></div>
-                </div>
-                <small>分离期：丧失与悲恸 (95%)</small>
-            </div>
-        </section>
-
-        <section>
-            <h2>6.3 核心机制二：预期破坏与情感落差</h2>
-            <div class="mechanism-box">
-                <span class="mechanism-title">机制：峰终定律 (Peak-End Rule)</span>
-                <p>诺贝尔奖得主丹尼尔·卡尼曼的研究指出，人们对一段经历的记忆，主要取决于其<b>高峰时刻</b>和<b>结束时刻</b>的情感强度。3.1版本的叙事在接近尾声时，刻意制造了一个虚假的"胜利高峰"——玩家击退了鸣式的进攻，爱弥斯的形态似乎稳定了下来。然而紧接着，剧情急转直下，揭示了莫比乌斯循环的必然性。
-                </p>
-                <p>这种"给予希望再夺走"的策略，最大限度地放大了情感落差。结局的悲剧性不是一开始就注定的（那样只会产生钝痛），而是在玩家以为安全的那一刻骤然袭来（产生锐痛）。</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>6.4 核心机制三：交互反馈的丧失</h2>
-            <div class="mechanism-box">
-                <span class="mechanism-title">机制：操作性条件反射的消亡 (Operant Conditioning Extinction)</span>
-                <p>在数十小时的游戏过程中，玩家习惯了爱弥斯作为"反馈源"的存在：她会回应你的操作、在战斗中提供支援、在对话中给出情感反馈。当她离去后，这种<b>交互反馈链条</b>被突然切断。玩家的大脑无法立刻适应这种"按下按钮但无回应"的空虚，从而产生类似于"戒断反应"的心理真空。这种空虚感，是纯粹的视觉叙事无法复制的。
-                </p>
-            </div>
-        </section>
-
-        <section>
-            <h2>6.5 案例分析：最终分离场景的刀点解构</h2>
-            <div class="case-study">
-                <p><b>场景背景：</b>罗伊冰原深处，磁暴达到峰值。爱弥斯的身体开始像素化。</p>
-                <p><b>刀点 1（视觉）：</b>她的手伸向漂泊者，但在即将触碰的瞬间开始崩解。</p>
-                <p><b>刀点 2（听觉）：</b>她没有哭泣，而是用一种极其平静的语调说出告别词，形成了一种"过于冷静反而更令人心碎"的反差张力。</p>
-                <p><b>刀点 3（认知）：</b>她感谢漂泊者"让她存在过"，而不是"救了她"。这将叙事主题从"英雄拯救"升华为"互相成就"，剥夺了玩家"我本可以做更多"的自我安慰空间。</p>
-                <p><b>刀点 4（沉默）：</b>在她消失后，游戏画面定格在空无一人的雪原长达5秒，没有任何背景音乐。这种"留白"设计强迫玩家直面丧失的重量。</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>6.6 为何这种"刀"不令人反感？</h2>
-            <p>并非所有的悲剧设计都能产生正向的情感体验。廉价的悲剧（如无意义的死亡）会让玩家感到受骗和愤怒。3.1版本的成功在于，它赋予了牺牲以<b>充分的意义</b>和<b>主观能动性</b>。爱弥斯不是"被杀死"的，而是"选择离开"的。她的离开不是结局的失败，而是胜利的代价。这种"崇高的哀伤"让玩家在悲痛的同时，也感受到了一种对角色勇气的敬意和对叙事完整性的满足。
-            </p>
-        </section>
-
-        <footer>
-            <p>© 2026 深度游戏研究小组 | 鸣潮 3.1 扩展文档：第六章</p>
-        </footer>
+    <!-- Mobile Menu Button -->
+    <div class="mobile-menu-btn" onclick="window.location.href='../index.html'">
+        <span>←</span>
     </div>
 
+    <div class="main-content" style="margin-left: 0; width: 100%; max-width: 100%;">
+        <div class="container">
+            <nav style="margin-bottom: 40px;">
+                <a href="../index.html" class="read-more-link">← 返回主报告</a>
+            </nav>
+
+            <header data-text="第六章：心理共鸣的机制与刀点工程学">
+                <span class="version-badge">Chapter 06</span>
+                <h1 data-text="第六章：心理共鸣的机制与刀点工程学">第六章：心理共鸣的机制与刀点工程学</h1>
+                <p style="color: var(--text-secondary);">深度解析报告 - V3.1 Artifact Analysis</p>
+            </header>
+
+            <section>
+                <h2>6.1 何为“刀”？情感工程学的解剖</h2>
+                <p>在玩家社区中，“刀”是一种高度精确的形容：它描述了一种能够穿透理性防线、直击情感核心的叙事体验。《鸣潮》3.1版本之所以被誉为“刀峰之作”，是因为它系统性地部署了一整套<b>心理共鸣机制</b>，将“数据化的别离”转化为“生理性的心痛”。本章将拆解这套精密的“刀点工程”。
+                </p>
+            </section>
+
+            <section>
+                <h2>6.2 核心机制一：依附关系的建立与撕裂</h2>
+                <div class="log-box" style="margin: 35px 0;">
+                    <span
+                        style="color: var(--accent-blue); font-weight: bold; display: block; margin-bottom: 15px;">机制：亲密依附
+                        (Attachment Bonding)</span>
+                    <p>心理学研究表明，人类天生会对那些与我们共度艰难时刻、并展现出脆弱性的个体产生强烈的保护欲。3.1版本通过爱弥斯最初的“虚弱态”设计，精准触发了玩家的<b>照顾本能 (Caregiving
+                            Instinct)</b>。当她从一个需要保护的幼稚形象，成长为一个能够独当一面的战斗伙伴，再到最终选择离开时，玩家经历的不仅是角色的成长，更是一段“亲子关系”的完整生命周期。</p>
+                    <p style="margin-top: 20px; font-weight: bold;">阶段情感强度模拟：</p>
+
+                    <div style="margin: 15px 0;">
+                        <small style="color: var(--text-muted);">相遇期：好奇与保护欲 (30%)</small>
+                        <div
+                            style="height: 10px; background: rgba(52, 152, 219, 0.2); border-radius: 5px; overflow: hidden; border: 1px solid var(--accent-blue);">
+                            <div style="height: 100%; width: 30%; background: var(--accent-blue);"></div>
+                        </div>
+                    </div>
+
+                    <div style="margin: 15px 0;">
+                        <small style="color: var(--text-muted);">成长期：欣慰与自豪感 (70%)</small>
+                        <div
+                            style="height: 10px; background: rgba(46, 204, 113, 0.2); border-radius: 5px; overflow: hidden; border: 1px solid #2ecc71;">
+                            <div style="height: 100%; width: 70%; background: #2ecc71;"></div>
+                        </div>
+                    </div>
+
+                    <div style="margin: 15px 0;">
+                        <small style="color: var(--text-muted);">分离期：丧失与悲恸 (95%)</small>
+                        <div
+                            style="height: 10px; background: rgba(231, 76, 60, 0.2); border-radius: 5px; overflow: hidden; border: 1px solid var(--accent-danger);">
+                            <div style="height: 100%; width: 95%; background: var(--accent-danger);"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>6.3 核心机制二：预期破坏与情感落差</h2>
+                <div class="log-box" style="margin: 35px 0;">
+                    <span
+                        style="color: var(--accent-cyan); font-weight: bold; display: block; margin-bottom: 15px;">机制：峰终定律
+                        (Peak-End Rule)</span>
+                    <p>诺贝尔奖得主丹尼尔·卡尼曼的研究指出，人们对一段经历的记忆，主要取决于其<b>高峰时刻</b>和<b>结束时刻</b>的情感强度。3.1版本的叙事在接近尾声时，刻意制造了一个虚假的“胜利高峰”——玩家击退了鸣式的进攻，爱弥斯的形态似乎稳定了下来。然而紧接着，剧情急转直下，揭示了莫比乌斯循环的必然性。
+                    </p>
+                    <p>这种“给予希望再夺走”的策略，最大限度地放大了情感落差。结局的悲剧性不是一开始就注定的（那样只会产生钝痛），而是在玩家以为安全的那一刻骤然袭来（产生锐痛）。</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>6.4 核心机制三：交互反馈的丧失</h2>
+                <div class="log-box" style="margin: 35px 0;">
+                    <span
+                        style="color: var(--text-primary); font-weight: bold; display: block; margin-bottom: 15px;">机制：操作性条件反射的消亡
+                        (Operant Conditioning Extinction)</span>
+                    <p>在数十小时的游戏过程中，玩家习惯了爱弥斯作为“反馈源”的存在：她会回应你的操作、在战斗中提供支援、在对话中给出情感反馈。当她离去后，这种<b>交互反馈链条</b>被突然切断。玩家的大脑无法立刻适应这种“按下按钮但无回应”的空虚，从而产生类似于“戒断反应”的心理真空。这种空虚感，是纯粹的视觉叙事无法复制的。
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>6.5 案例分析：最终分离场景的刀点解构</h2>
+                <div class="quote-box">
+                    <p><b>场景背景：</b>罗伊冰原深处，磁暴达到峰值。爱弥斯的身体开始像素化。</p>
+                    <p><b>刀点 1（视觉）：</b>她的手伸向漂泊者，但在即将触碰的瞬间开始崩解。</p>
+                    <p><b>刀点 2（听觉）：</b>她没有哭泣，而是用一种极其平静的语调说出告别词，形成了一种“过于冷静反而更令人心碎”的反差张力。</p>
+                    <p><b>刀点 3（认知）：</b>她感谢漂泊者“让她存在过”，而不是“救了她”。这将叙事主题从“英雄拯救”升华为“互相成就”，剥夺了玩家“我本可以做更多”的自我安慰空间。</p>
+                    <p><b>刀点 4（沉默）：</b>在她消失后，游戏画面定格在空无一人的雪原长达5秒，没有任何背景音乐。这种“留白”设计强迫玩家直面丧失的重量。</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>6.6 为何这种“刀”不令人反感？</h2>
+                <p>并非所有的悲剧设计都能产生正向的情感体验。廉价的悲剧（如无意义的死亡）会让玩家感到受骗和愤怒。3.1版本的成功在于，它赋予了牺牲以<b>充分的意义</b>和<b>主观能动性</b>。爱弥斯不是“被杀死”的，而是“选择离开”的。她的离开不是结局的失败，而是胜利的代价。这种“崇高的哀伤”让玩家在悲痛的同时，也感受到了一种对角色勇气的敬意和对叙事完整性的满足。
+                </p>
+            </section>
+
+            <footer>
+                <p>© 2026 深度游戏研究小组 | 鸣潮 3.1 扩展文档：第六章</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="../js/visual_effects.js"></script>
 </body>
 
 </html>
